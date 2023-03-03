@@ -1,0 +1,68 @@
+PYTHON COM BANCO DE DADOS 
+
+Apresentar como realizar a conexão com bancos de dados para criação de tabelas, consultas, inserção, alteração e eliminação de dados utilizando Python e SQL.
+
+O SQLite é um sistema de gerenciamento de banco de dados SQL embutido em uma única biblioteca. 
+Ele é muito popular em aplicações que precisam armazenar dados localmente e não requerem um servidor de banco de dados completo.
+
+O SQLite é um sistema de gerenciamento de banco de dados relacional (RDBMS) leve e embutido em uma única biblioteca. Ele foi projetado para ser confiável, rápido e eficiente em termos de recursos, e é amplamente utilizado em aplicativos que precisam armazenar dados localmente, como smartphones, navegadores da web e outros aplicativos de desktop.
+
+O SQLite é um software de código aberto e é distribuído como um arquivo de biblioteca que pode ser incorporado diretamente em um aplicativo. Isso significa que não há necessidade de um servidor de banco de dados separado para armazenar dados. Em vez disso, o SQLite cria e manipula um arquivo de banco de dados local em um dispositivo de armazenamento, como disco rígido ou memória flash.
+
+Embora o SQLite tenha muitas características avançadas de um RDBMS completo, ele também possui algumas limitações. 
+Por exemplo, ele não suporta concorrência em gravações simultâneas no banco de dados, tornando-o menos adequado para aplicativos de alta carga de trabalho.
+No entanto, para muitas aplicações de baixo e médio porte, o SQLite é uma escolha popular devido à sua facilidade de uso, eficiência e portabilidade.
+ 
+O banco de dados SQLite é um gerenciador de banco de dados leve, completo e já vem pré-instalado com o interpretador Python. 
+O SQLite não precisa de um servidor dedicado e pode ser utilizado pelo Python por meio do módulo predefinido sqlite3.
+
+A HISTÓRIA DO SQlite 
+O SQLite foi criado por D. Richard Hipp em 2000. Hipp projetou o SQLite com o objetivo de criar um sistema de gerenciamento de banco de dados embutido, 
+que fosse fácil de usar, rápido, confiável e portátil.
+
+O SQLite foi originalmente projetado como uma alternativa mais leve ao mecanismo de armazenamento de dados em arquivos usado pelo navegador Mozilla, 
+que Hipp estava trabalhando na época. 
+Desde então, o SQLite tem sido amplamente adotado em uma variedade de aplicações, incluindo navegadores da web, sistemas operacionais, 
+aplicativos móveis e muitos outros.
+
+O SQLite é escrito em C e é um software de código aberto disponível sob a licença domínio público, o que significa que pode ser usado, 
+modificado e distribuído sem restrições. 
+Além disso, o SQLite é compatível com a maioria das linguagens de programação, incluindo Python, C++, Java, Ruby e muitas outras, 
+o que o torna uma escolha popular para muitos desenvolvedores.
+
+COMO UTILIZAR O SQlite
+Para começar, você precisará instalar o pacote sqlite3 em seu ambiente Python, que é responsável por conectar ao banco de dados SQLite. 
+Para isso, basta digitar o seguinte comando no terminal:
+
+pip install sqlite3
+Criação de bancos de dados e tabelas
+O exemplo a seguir utiliza a SQL, linguagem padrão dos bancos de dados relacionais, para criar o data-base (banco de dados) agenda.db. 
+Depois cria uma tabela denominada contatos com duas colunas nome e telefone.
+Por último, insere uma linha na tabela com um nome ("John Smith") e um telefone ("5555-1111").
+
+pip install sqlite3
+ 
+#importa o módulo predefinido sqlite3
+import sqlite3
+ 
+#abre uma conexão com o banco de dados agenda.db
+conexao = sqlite3.connect("agenda.db")
+ 
+#cria um objeto cursor por meio do método cursor()  para enviar informações ao banco de dados
+cursor = conexao.cursor()
+ 
+#utiliza o método execute() do objeto cursor para criar a tabela contatos
+cursor.execute('''
+   create table contatos (
+      nome text,
+      telefone text )
+   ''')
+ 
+#fecha o cursor.
+cursor.close()
+ 
+#fecha a conexão com o banco de dados
+conexao.close()
+Tipos de dados
+O SQLite 
+
